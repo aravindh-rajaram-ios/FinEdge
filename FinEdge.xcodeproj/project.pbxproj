@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		ED815A023030BC4A006D05F9 /* .gitignore in Sources */ = {isa = PBXBuildFile; fileRef = ED815A013030BC3A006D05F9 /* .gitignore */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		ED8159D93030B2AC006D05F9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +31,7 @@
 		ED8159CB3030B2AB006D05F9 /* FinEdge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinEdge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED8159D83030B2AC006D05F9 /* FinEdgeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinEdgeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED8159E23030B2AC006D05F9 /* FinEdgeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinEdgeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED815A013030BC3A006D05F9 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -75,6 +80,7 @@
 		ED8159C23030B2AB006D05F9 = {
 			isa = PBXGroup;
 			children = (
+				ED815A013030BC3A006D05F9 /* .gitignore */,
 				ED8159CD3030B2AB006D05F9 /* FinEdge */,
 				ED8159DB3030B2AC006D05F9 /* FinEdgeTests */,
 				ED8159E53030B2AC006D05F9 /* FinEdgeUITests */,
@@ -236,6 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED815A023030BC4A006D05F9 /* .gitignore in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
