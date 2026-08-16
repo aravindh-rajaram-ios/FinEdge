@@ -16,6 +16,12 @@ final class LoginViewModel: ObservableObject {
     @Published var isLoading: Bool = false
     @Published var errorMessage: String?
     
+    private let loginUseCase: LoginUseCase
+    
+    init(loginUseCase: LoginUseCase = LoginUseCase()) {
+        self.loginUseCase = loginUseCase
+    }
+    
     func login(){
         errorMessage = nil
         
@@ -36,10 +42,17 @@ final class LoginViewModel: ObservableObject {
         
         isLoading = true
         
-        //Temporary mock login
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-            self.isLoading = false
-            print("logged In")
+        Task {
+            do {
+                try await loginUseCase.execute(email: email, password: password)
+                
+                isLoading = false
+                print("Login Successfully")
+            }
+            catch{
+                isLoading = false
+                errorMessage = error.localizedDescription
+            }
         }
     }
 }
