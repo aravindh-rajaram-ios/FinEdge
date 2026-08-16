@@ -38,10 +38,23 @@ struct LoginView: View {
                         .padding()
                         .background(Color.gray.opacity(0.2))
                         .clipShape(RoundedRectangle(cornerRadius: 10))
+                    if let errorMessage = loginVM.errorMessage {
+                        Text(errorMessage)
+                            .font(.caption)
+                            .foregroundStyle(.red)
+                    }
                 }
                 
-                Button("Login") {
+                Button{
                     loginVM.login()
+                }label: {
+                    if loginVM.isLoading {
+                        ProgressView()
+                            .tint(.white)
+                    }
+                    else{
+                        Text("Login")
+                    }
                 }
                 .frame(maxWidth: .infinity)
                 .padding()
