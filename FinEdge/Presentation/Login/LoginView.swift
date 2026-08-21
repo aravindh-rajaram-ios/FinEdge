@@ -12,6 +12,13 @@ struct LoginView: View {
     
     @StateObject private var loginVM = LoginViewModel()
     
+    init(){
+        let repositary = AuthenticationImpl()
+        let useCase = LoginUseCase(repository: repositary)
+        
+        _loginVM = StateObject(wrappedValue: LoginViewModel(loginUseCase: useCase))
+    }
+   
     var body: some View {
         ZStack{
             Color(

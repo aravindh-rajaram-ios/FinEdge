@@ -9,8 +9,15 @@ import Foundation
 
 struct LoginUseCase {
     
+    private let repository: AuthenticationRepository
+    
+    init(repository: AuthenticationRepository) {
+        self.repository = repository
+    }
+    
+
+    
     func execute(email:String, password:String) async throws {
-        try await Task.sleep(for: .seconds(1))
-        print("Executing Login..")
+        try await repository.login(email: email, password: password)
     }
 }
